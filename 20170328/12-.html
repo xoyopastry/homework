@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="CSS/jquery-ui.min.css">
+    <style>
+        #elem{border: 4px solid #f00;
+            color: #006;
+            background-color: #aaa;
+            font-size: 25px;
+            padding: 1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="elem">color animation</div>
+<button id="toggle">click me</button>
+<script src="../jQuery/bower_components/jquery/jquery.min.js"></script>
+<!--<script src="js/jquery-ui.min.js"></script>-->
+<script src="../jQuery/bower_components/jquery-ui/jquery-1.10.2.js"></script>
+<script>
+    $("#toggle").button();
+    $("#toggle").click(function () {
+        $("#elem").animate({
+            color:"purple",
+            backgroundColor:"blue",
+            borderColor:"green"
+        });
+    })
+</script>
+</body>
+</html>

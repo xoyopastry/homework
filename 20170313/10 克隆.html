@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cloneNode</title>
+</head>
+<body>
+<ul>
+    <li>猫猫</li>
+    <li>小白<span>鼠</span></li>
+</ul>
+<script>
+    var ul = document.getElementsByTagName("ul")[0];
+    var oMao = document.getElementsByTagName("li")[0];
+    var oBai = document.getElementsByTagName("li")[1];
+    ul.appendChild(oBai.cloneNode(true));
+</script>
+</body>
+</html>

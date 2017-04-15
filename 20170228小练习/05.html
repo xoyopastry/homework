@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 79px;
+            height: 108px;
+            background: url("images/girl.png");
+            background-position: 0px -216px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var oDiv= document.getElementsByTagName("div")[0];
+    var nowLeft=0;
+
+    var step =0;
+    setInterval(function () {
+        nowLeft += 4;
+        step++;
+        if (step>7) step=0;
+//        oDiv.style.left=nowLeft+"px";
+        oDiv.style.right=nowLeft+"px";
+        oDiv.style.backgroundPosition = step * 79
+            + "px -216px";
+//        oDiv.style.backgroundPosition = -step * 79
+//        + "px -216px";
+    },40);
+
+//    setInterval(function () {
+//
+//    },30)
+
+
+</script>
+</body>
+</html>

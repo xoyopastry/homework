@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    p{
+      width: 60px;
+      height: 60px;
+      background-color: orange;
+      position: absolute;
+      top: 100px;
+      left: 100px;}
+    .box2{
+      top: 300px;}
+  </style>
+</head>
+<body>
+<p class="box1"></p>
+<p class="box2"></p>
+<script src="jquery-3.2.0.min.js"></script>
+<script>
+  $("p").mouseenter(function () {
+      $(this).animate({'width':400},600)
+  });
+  $("p").mouseleave(function () {
+      $(this).animate({'width':160},600)
+  });
+</script>
+</body>
+</html>

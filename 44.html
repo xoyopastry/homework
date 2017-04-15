@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+    <script>
+        window.onclick(){
+            var box1ps = document.getElementById("box1").getElementsByTagName("p");
+            var box2ps = document.getElementById("box2").getElementsByTagName("p");
+            for (var i = 0; i < box1ps.length; i++) {
+               // var obj = box1ps[i];
+                (Function(i){
+                    box1ps.onclick=function () {
+                        
+                    }
+                })(i);
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box1">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</div>
+<div id="box2">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</div>
+</body>
+</html>

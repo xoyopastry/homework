@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    p{
+      width: 60px;
+      height: 60px;
+      background-color: #ccc;}
+  </style>
+</head>
+<body>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<script src="jquery-3.2.0.min.js"></script>
+<script>
+  //所有的P标签背景颜色变红
+  $("p").css("background-color","red");
+
+  //第一个P标签颜色变绿
+  $("p:first").css("background-color","green");
+//  $("p").first().css("background-color","green");
+//  $("p")[0].style.backgroundColor="green";
+
+  //最后一个P标签颜色变橙
+  $("p").last().css("background-color","orange");
+//  $("p")[5].style.backgroundColor="orange";
+
+  //第三个P标签变蓝
+  $("p").eq(3).css("background-color","blue");
+//  $("p")[2].style.backgroundColor="blue";
+
+  //第三个P标签之前的元素执行一秒钟的动画，宽度变为400
+  $("p:lt(3)").animate({"width":400},1000);
+//  $("p").slice(0,3).css("weight","400px");
+
+  //第三个P标签之后的元素执行一秒钟的动画，宽度变为400
+  $("p:gt(3)").animate({"width":400},1000);
+
+  //P标签的奇数对象执行一秒钟的动画，宽度变为400
+  $("p:odd").animate({"width":400},1000);
+
+  //P标签的偶数对象执行一秒钟的动画，宽度变为400
+  $("p:even").animate({"width":400},1000);
+
+</script>
+</body>
+</html>

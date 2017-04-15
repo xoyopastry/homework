@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="img"></div>
+<script>
+    function xj(obj) {
+        console.log(obj.photos.photo[1]);
+        var pic =document.createElement("img");
+        pic.src="http://files.haohaowan.com/yxxj/or_"+obj.photos.photo[1].url;
+        var oDiv=document.getElementById("img");
+        oDiv.appendChild(pic);
+    }
+</script>
+<script type="text/javascript" src="http://yx.xianjian.com/p/api.php?method=wf&api_key=nimakdkeiLdkfen2lidkdlDLLEKd&page=1&per_page=10&tag=&type=5&order=2&_ksTS=1462767366304_78&jsoncallback=xj"></script>
+</body>
+</html>

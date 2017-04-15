@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+    console.log(shuffle(arr))
+    //返回一个随机乱序的list副本
+    function shuffle(arr) {
+        var result = [],
+            rand;
+        while(arr.length > 0){
+            rand = j.random(0,arr.length);
+            result.push(arr[rand]);
+            arr.splice(rand,1);
+        }
+        return result;
+    }
+    function random(start, end) {
+        return start + parseInt(Math.random() *(end - start));
+    }
+</script>
+</body>
+</html>

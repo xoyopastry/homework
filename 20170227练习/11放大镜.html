@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;}
+        .smallPic{
+            width: 350px;
+            height: 150px;
+            border:1px solid #ccc;
+            margin: 100px;
+            position: relative;
+        }
+        .smallPic .zoom{
+            width: 175px;
+            height: 175px;
+            border:1px solid #ccc;
+            margin: 100px;
+            position: absolute;
+            left: 500px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+<!--(div#smallPic.smallPic>img+div#zoom.zoom)+div#bigPic.bigPic-->
+<div id="smallPic" class="smallPic"><img src="" alt="">
+    <div id="zoom" class="zoom"></div>
+</div>
+<div id="bigPic" class="bigPic"></div>
+<script>
+    var smallPic= document.getElementById("smallPic");
+    var zoom= document.getElementById("zoom");
+    var bigPic= document.getElementById("bigPic");
+//    var rate = ;
+
+//    smallPic.onmouseover=function (e) {
+//            e=e||window.event;
+//            var scorollTop=document.documentElement.scrollTop
+//                ||document.body.scrollTop;
+//            var x =e.clientX-(getAllLeft())
+//
+//        }
+    smallPic.onmousemove=function (e) {
+        e=e||window.event;
+        var scorollTop=document.documentElement.scrollTop
+            ||document.body.scrollTop;
+        var x =e.clientX-(getAllLeft(smallPic))-n;
+        var y =e.clientY-(getAllTop(smallPic)-scorollTop)-n;
+        if (x<0) {
+            x=0;
+        }
+        if () {
+            
+        }
+    }
+
+</script>
+</body>
+</html>

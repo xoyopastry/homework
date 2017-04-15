@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 6000px;}
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: gold;}
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var oDiv=document.getElementsByTagName("div")[0];
+    function mousewhellHandler(e) {
+        e=e||window.event;
+        if (e.preventDefault) {
+            e.preventDefault();
+        }else{
+            e.returnValue=false;
+        }
+
+        if (e.wheelDelta) {
+            var direction=e.wheelDelta >0 ? 1 : -1;
+        }else{
+            var direction=e.detail >0 ? -1 : 1;
+        }
+        oDiv.innerHTML=direction;
+    }
+    oDiv.onmousewheel=mousewhellHandler;
+    oDiv.addEventListener("DOMMouseScrool",mousewhellHandler,false);
+</script>
+</body>
+</html>

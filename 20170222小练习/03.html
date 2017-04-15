@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <style>
+        div{padding: 10px 20px 30px 40px;}
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var oDiv = document.getElementsByTagName("div")[0];
+//    fetchComputedStyle(obj,property)
+    function fetchComputedStyle() {
+        if(window.getComputedStyle){
+            property = property.replace(/([A-Z])/g, function (match, $1) {
+                return "-" + $1.toLowerCase();
+            });
+            return window.getComputedStyle(obj)[property];
+        }else{
+            property = property.replace(/-([a-z])/g, function (match, $1) {
+                return $1.toUpperCase();
+            });
+            return obj.currentStyle[property];
+        }
+    }
+    alert(fetchComputedStyle(oDiv,"padding-left"));
+    alert(fetchComputedStyle(oDiv,"paddingRight"));
+</script>
+</body>
+</html>

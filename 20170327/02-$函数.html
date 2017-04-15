@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #box{
+      width: 200px;
+      height: 200px;
+      background-color: #c86c8c;
+    }
+  </style>
+</head>
+<body>
+<div id="box"></div>
+<script src="jquery-3.2.0.min.js"></script>
+<script>
+//  $("#box")[0].style.backgroundColor = "red";
+  //
+  try{
+      $("#box").style.backgroundColor = "red";//错误的写法
+      //为了使用try,catch,了解抛出异常和捕获异常
+      throw new Error("抛出一个异常");
+  }catch (e){console.log(e);}
+</script>
+</body>
+</html>

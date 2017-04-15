@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        .box{
+            width: 790px;
+            height:340px ;
+            margin: 50px auto;
+            position: relative;
+        }
+        .imagesList ul{list-style: none;}
+        .imagesList ul li{display: none;}
+        .imagesList ul li.current{display:block;}
+        .btns span{
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            top:130px;
+            cursor: pointer;
+        }
+        .btns #last{
+            left: 10px;
+            background:url(images/jd/left.png);
+        }
+        .btns #next{
+            right: 10px;
+            background:url(images/jd/right.png);
+        }
+        .circles{
+            width: 246px;
+            height: 20px;
+            background-color: rgba(220,220,220,0.3);
+            border: 1px solid rgba(220,220,220,0.3);
+            border-radius: 16px;
+            position: absolute;
+            top: 300px;
+            right: 290px;
+        }
+        .circles ol li{
+            list-style: none;
+            float: left;
+            width: 12px;
+            height: 12px;
+            border:1px solid red;
+            border-radius: 50%;
+            background-color: white;
+            margin: 3px 0 0 15px;
+        }
+    </style>
+</head>
+<body>
+<div id="box" class="box">
+    <div id="imagesList" class="imagesList">
+        <ul>
+            <li class="current"><a href=""><img src="images/jd/1.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/jd/2.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/jd/3.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/jd/4.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/jd/5.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/jd/6.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/jd/7.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/jd/8.jpg" alt=""></a></li>
+        </ul>
+    </div>
+    <div id="btns" class="btns">
+        <span id="last"></span>
+        <span id="next"></span>
+    </div>
+    <div id="circles" class="circles">
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</div>
+<script>
+    var oBox = document.getElementById("box");
+    var imagesListLis =
+        document.getElementById("imagesList")
+        .getElementsByTagName("li");
+    var circlesLis =
+        document.getElementById("circles")
+            .getElementsByTagName("li");
+    var leftBtn = document.getElementById("last");
+    var rightBtn = document.getElementById("next");
+
+    var img_idx=0;
+    leftBtn.onclick=function () {
+        img_idx--;
+        if(img_idx<0)img_idx=7;
+        changePic();
+    };
+    rightBtn.onclick=function () {
+        img_idx++;
+        if(img_idx>7)img_idx=0;
+        changePic();
+    };
+
+    for (var i = 0; i < circlesLis.length; i++) {
+        (function (i) {
+            circlesLis[i].onmouseover=function () {
+                img_idx = i;
+                changePic();
+                for (var j = 0; j < circlesLis.length; j++) {
+                    circlesLis[j].style.backgroundColor="white";
+                }
+                this.style.backgroundColor="red";
+            };
+        })(i);
+    }
+
+    function changePic(){
+        for (var i = 0; i < imagesListLis.length; i++) {
+            imagesListLis[i].className="";
+        }
+        imagesListLis[img_idx].className="current";
+    }
+
+</script>
+</body>
+</html>

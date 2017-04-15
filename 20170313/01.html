@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        div{
+            border: 1px solid deeppink;
+            /*height: 200px;*/
+        }
+        .box{width: 100%;}
+        .tu{float: left;
+            /*width: 400px;*/
+        }
+        .wen{float: left;
+            /*width: 100px;*/
+        }
+    </style>
+</head>
+<body>
+<div id="box" class="box">
+    <div id="tu" class="tu"></div>
+    <div id="wen" class="wen"></div>
+</div>
+<div id="div"></div>
+<script src="myajax.js"></script>
+<script>
+    var oBox=document.getElementById("box");
+    var oTu=document.getElementById("tu");
+    var oWen=document.getElementById("wen");
+    myajax.get("baijia0.json",
+//        http://localhost/20130313/
+        {
+//            "m_image_url" : this.getAttribute ("m_image_url"),
+//            "m_title" : this.getAttribute("m_title")
+        },
+        function (err,data) {
+            if (err) return;
+            var obj = eval("("+data+")");
+            console.log(obj);
+            for (var i = 0; i < obj.data.list.length; i++) {
+                var o = obj.data.list[i];
+//                var box=document.createElement("div");
+//                var tu=document.createElement("div");
+//                var wen=document.createElement("div");
+//                box.className="box";
+//                tu.className="tu";
+//                wen.className="wen";
+//                body.appendChild("box");
+//                box.appendChild("tu");
+//                box.appendChild("wen");
+                div.innerHTML+=
+                    "<div class='box'>" +
+                    "<div class='tu'><img src='o.m_image_url' alt=''></div>"+
+                    "<div class='wen'>" +o.m_title+ "</div>"+
+                    "</div>";
+//                body.appendChild("box");
+            }
+    });
+
+</script>
+</body>
+</html>

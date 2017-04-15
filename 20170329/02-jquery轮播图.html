@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../jQuery/bower_components/jquery/jquery.js"></script>
+<script src="js/jquery_change_pic.js"></script>
+<script>
+    /**
+     * function changepic(图片元素，图片数组){
+     * }
+     */
+    $(function () {
+        $.changepic($("#changepic"),
+            [
+                "images/carousel/957.jpg",
+                "images/carousel/969.jpg",
+                "images/carousel/970.jpg",
+                "images/carousel/971.jpg",
+                "images/carousel/972.jpg",
+                "images/carousel/973.jpg"
+            ],
+            {time:1000}
+        );
+    });
+</script>
+<img id="changepic" src="" alt="">
+</body>
+</html>

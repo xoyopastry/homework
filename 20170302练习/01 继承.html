@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Animal(type,age,name) {
+        this.type=type;this.age=age;this.name=name;
+    }
+    Animal.prototype={
+        sayHello:function () {
+            console.log("Hello,我是"+this.type);
+        }
+    };
+    function Cat() { }
+    Cat.prototype=new Animal("缅甸布娃娃",2,"鲁班");
+    var l=new Cat();
+    console.log(l.name);//
+    console.log(l.age);//
+    console.log(l.type);//
+    console.log(l.sayHello());/*  Hello,我是缅甸布娃娃
+                                   undefined
+    */
+</script>
+</body>
+</html>

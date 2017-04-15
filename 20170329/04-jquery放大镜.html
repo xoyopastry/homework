@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery放大镜</title>
+    <style>
+        .container { padding: 15px; }
+        section { padding-top: 20px; }
+        .padding-top0 { padding-top: 0px !important;}
+        .row {
+            width: 100%;
+            margin:0 auto;
+            max-width: 62.5em; }
+        .row:before, .row:after {
+            content: " ";
+            display: table; }
+        .row:after {
+            clear: both; }
+        .large-12 {
+            width: 100%; }
+        .large-5 {
+            width: 41.66667%; }
+        .xzoom-container {
+            display: inline-block;
+        }
+    </style>
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <script src="js/jquery.hammer.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/magnific-popup.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <section id="default" class="padding-top0">
+        <div class="row">
+            <div class="large-12 column"><h3>Default options</h3></div>
+            <div class="large-5 column">
+                <div class="xzoom-container">
+                    <img class="xzoom" id="xzoom-default" src="images/gallery/preview/01_b_car.jpg" xoriginal="images/gallery/original/01_b_car.jpg" />
+                    <div class="xzoom-thumbs">
+                        <a href="images/gallery/original/01_b_car.jpg"><img class="xzoom-gallery" width="80" src="images/gallery/thumbs/01_b_car.jpg"  xpreview="images/gallery/preview/01_b_car.jpg" title="The description goes here"></a>
+                        <a href="images/gallery/original/02_o_car.jpg"><img class="xzoom-gallery" width="80" src="images/gallery/preview/02_o_car.jpg" title="The description goes here"></a>
+                        <a href="images/gallery/original/03_r_car.jpg"><img class="xzoom-gallery" width="80" src="images/gallery/preview/03_r_car.jpg" title="The description goes here"></a>
+                        <a href="images/gallery/original/04_g_car.jpg"><img class="xzoom-gallery" width="80" src="images/gallery/preview/04_g_car.jpg" title="The description goes here"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="large-7 column"></div>
+        </div>
+    </section>
+</div>
+<script src="js/foundation.min.js"></script>
+<script src="js/setup.js"></script>
+</body>
+</html>

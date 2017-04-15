@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .box{border: 1px solid #7274A7;}
+        .content{float: left;}
+        .logo{float: right;}
+        h1{color: green; float: left;}
+        h2{color: lime; float: right;;}
+        h3{color: orangered; float: left;}
+    </style>
+</head>
+<body>
+<div id="box" class="box">
+    <div class="content">
+        <h1>职位</h1>
+        <h2>公司</h2>
+        <h3>薪资</h3>
+    </div>
+    <div class="logo"><img src="" alt=""></div>
+</div>
+<script src="js/myajax.js"></script>
+<script src="js/json2.js"></script>
+<script>
+    var oBox = document.getElementById("box");
+    var oContent = document.getElementsByClassName("content");
+    var oLoge = document.getElementsByClassName("logo");
+    var oH1 = document.getElementsByTagName("h1");
+    var oH2 = document.getElementsByTagName("h2");
+    var oH3 = document.getElementsByTagName("h3");
+    myajax.get("lagou.json",
+        {},
+        function (err,data) {
+            if (err) return;
+            var obj = eval("("+data+")");
+            console.log(obj);
+            for (var i = 0; i < obj.content.result.length; i++) {
+                var o = obj.content.result;
+                console.log(o[i]);
+                var oDiv =document.createElement("div");
+                oDiv.innerHTML+=
+                    '<div class="box">'+
+                    '<div class="content">'+
+                    '<h1>'+ o[i].positionName +'</h1>'+
+                    '<h2>'+ o[i].companyShortName +'</h2><br>'+
+                    '<h3>'+ o[i].salary +'</h3>'+
+                    '</div>'+
+                    '<div class="logo">'+
+                    '<img src="o[i].companyLogo" alt="">'+
+                    '</div>'+
+                    '</div>';
+                oBox.appendChild(oDiv);
+            }
+        }
+    )
+</script>
+</body>
+</html>

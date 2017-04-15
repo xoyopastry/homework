@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,4];
+    each(arr,function(item) {
+        console.log(item * 2);
+    });
+    function each(array, fn) {
+        for (var i = 0; i < array.length; i++) {
+            fn(array[i]);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    p{
+      float: left;
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+      background: black;
+    }
+    #box{
+      clear: both;
+    }
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: yellowgreen;
+      position: absolute;
+      top: 111px;
+      left: 111px;
+    }
+    .circles ol{
+      list-style: none;
+    }
+    .circles ol li{
+      float: left;
+      width: 20px;
+      height: 20px;
+      background-color: orange;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<script src="jquery-3.2.0.min.js"></script>
+<script>
+  //使用jquery讲页面上的所有p标签变成红色；不需要写循环语句
+  //$选择的是所有符合条件的元素；对应的操作全部都是批量的
+  $("p").css({"background":"red"});
+</script>
+  <div id="box">
+    <ul>
+      <li><span>哈哈</span></li>
+      <li class="haha"><span>哈哈</span></li>
+      <li class="haha"><span>哈哈</span></li>
+      <li class="haha"><span>哈哈</span></li>
+      <li><span>哈哈</span></li>
+    </ul>
+  </div>
+<div class="box"></div>
+<div class="circles">
+  <ol>
+   <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ol>
+</div>
+
+</body>
+</html>

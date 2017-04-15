@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批量绑定事件</title>
+    <script>
+        window.onload(){
+            var ps=document.getElementsByTagName("p");
+            for(var i=0;i<ps.length;i++){
+                ps.onclick=function () {
+                    this.style.backgroundColor="blue";
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</body>
+</html>

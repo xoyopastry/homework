@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background-color: aqua;
+            width: 200px;
+            padding:10px 5px 8px 12px;
+            border: 20px solid deeppink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var oDiv=document.getElementsByTagName("div")[0];
+//    console.log(getComputedStyle(oDiv)["height"]);//2方式等价
+//    console.log(getComputedStyle(oDiv).getPropertyValue("height"));
+//上面的方式IE6、7、8全部视为错误
+    alert(oDiv.currentStyle.height);//auto
+    //在IE浏览器里获取对应计算后的样式，只能用驼峰
+    alert(oDiv.currentStyle["paddingLeft"]);//12px
+</script>
+</body>
+</html>

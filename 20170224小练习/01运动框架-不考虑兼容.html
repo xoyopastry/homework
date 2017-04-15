@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 120px;
+            height: 120px;
+            background-color: #fff;
+            position: absolute;
+            left:111px;
+            top:111px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var oDiv= document.getElementsById("box");
+    var current ={"left":111, "top":111};
+    var target={"left":777, "top":777};
+    var time=3000;
+    var timer = setInterval(function animate(obj,current,target,time) {
+        var interval =50;
+        var maxcount=time / interval;
+        count=0;
+        step = {};
+        for (var k in current){
+            current[k] += step[k];
+            obj.style[k]=current[k] +"px";
+        }
+        count++;
+        if (count==maxcount) {
+            clearInterval(timer)
+        }
+    },interval);
+
+
+</script>
+</body>
+</html>

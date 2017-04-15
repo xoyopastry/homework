@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <link rel="stylesheet" href="jquery-ui.min.css">
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;}
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;}
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<script src="jquery-3.2.0.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script>
+    $(".box1").dropable();
+    $(".box").draggable();
+</script>
+
+
+</body>
+</html>

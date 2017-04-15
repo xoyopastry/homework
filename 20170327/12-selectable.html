@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="jquery-ui.min.css">
+
+    <style>
+        .ui-selected{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<strong>SCI</strong>
+<ul id="select">
+    <li id="right">小白</li>
+    <li>猫猫</li>
+    <li>大白</li>
+</ul>
+<a href="#" id="btn">提交</a>
+<script src="jquery-3.2.0.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn").button();
+        $("#select").selectable();
+        $("#btn").on("click",function () {
+            if ($("right").hasClass("ui-selected")) {
+                alert("๑乛◡乛๑恭喜回答正确");
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            width: 30px;
+            height: 30px;
+            background-color: #cccccc;}
+    </style>
+</head>
+<body>
+<div id="box">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p>content</p>
+    <p id="xm">小明</p>
+    <p></p>
+    <p></p>
+</div>
+<script>
+//    //返回obj的前面一个兄弟
+//    function prevSibling(obj) {
+//        var prev = obj;
+//        while(prev = prev.previousSibling){
+//            if(prev.nodeType == Node.ELEMENT_NODE){
+//                return prev;
+//            }
+//        }
+//        return null;
+//    }
+//    var oXm = document.getElementById("xm");
+//    console.log(prevSibling(oXm));
+
+
+    //obj前面所有的兄弟标签
+    function prevAll(obj) {
+        var arr = [];
+        while(obj = obj.previousSibling){
+            if(obj.nodeType == Node.ELEMENT_NODE){
+                arr.push(obj);
+            }
+        }
+        return arr;
+    }
+    var oXm = document.getElementById("xm");
+//    console.log(prevAll(oXm));
+//    arr[0]=prevSibling(oXm);
+//    arr[1]=prevSibling(prevSibling(oXm));
+
+    var array = prevAll(oXm);
+    for (var i = 0; i < array.length; i++) {
+        var obj = array[i];
+        obj.style.backgroundColor="yellow";
+    }
+</script>
+</body>
+</html>

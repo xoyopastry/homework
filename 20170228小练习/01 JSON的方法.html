@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON的方法</title>
+</head>
+<body>
+<script>
+    var obj= {"a":11};
+    console.log(obj);
+    var jstr = JSON.stringify(obj);
+    console.log(jstr,typeof jstr);
+
+    var j = JSON.parse(jstr);
+    console.log(j,typeof j);
+</script>
+</body>
+</html>

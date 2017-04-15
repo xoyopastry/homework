@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .tip{display: none;}
+        .wrong{background: yellow; color: red}
+        .correct{background: greenyellow; color: green;}
+    </style>
+</head>
+<body>
+<p>用户名：<input type="text" id="yonghuming"></p>
+<p id="tip" class="tip"></p>
+<script>
+    var oYonghuming = document.getElementById("yonghuming");
+    var oTip = document.getElementById("tip");
+    //监听文本框的blur事件，失去焦点
+    oYonghuming.onblur=function() {
+        var yonghuming = oYonghuming.value;
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState == 4){
+                if(xhr.responseText == 'n'){
+                    oTip.style.display = "block";
+                    oTip.className = "wrong";
+                    oTip.innerHTML = "对不起(╥╯^╰╥)该用户名已被占用";
+                }else{
+                    oTip.style.display = "block";
+                    oTip.className = "correct";
+                    oTip.innerHTML = "恭喜๑乛◡乛๑该用户名可以使用";
+                }
+            }
+        };
+        xhr.open("GET","a.php?yonghuming="+yonghuming,true);
+        xhr.send(null);
+    };
+</script>
+</body>
+</html>

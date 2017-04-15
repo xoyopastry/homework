@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑块slider</title>
+    <link rel="stylesheet" href="CSS/jquery-ui.min.css">
+    <script src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+<span id="span">0</span>
+<div id="slider"></div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script>
+    $("#slider").slider({
+        slider:function (event,ui) {
+            $("#span").text($("#slider").slider("option","value"));
+        }
+    });
+</script>
+</body>
+</html>

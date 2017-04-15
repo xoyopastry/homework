@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //构造函数的全名，通常首字母大写
+    function Cat(name,type,age) {
+        this.name=name;
+        this.type=type;
+        this.age=age;
+        this.sayHello=function () {
+            console.log("你好，我是"+type+"，我叫"+this.name);
+        }
+    }
+    var luban=new Cat("鲁班","缅甸布娃娃",2);
+    var liliya=new Cat("莉莉娅","加菲",2);
+    luban.sayHello();
+    liliya.sayHello();
+</script>
+</body>
+</html>

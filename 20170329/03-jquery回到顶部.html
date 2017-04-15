@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 5000px;}
+        #gotop{
+            display:none;
+            height:auto;width:60px;
+            position: fixed;
+            _position: absolute;
+            right:44px;bottom:44px;
+            cursor:pointer;
+        }
+        #gotop .top{
+            position:relative;
+            width:59px;height:59px;
+            display:block;
+            background: url("images/icon.png") -20px -813px no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div id="gotop"><a href="#" class="top"></a></div>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-gotop.js"></script>
+<script>
+    $(function () {
+        $("#gotop").click(function (e) {
+                $("body,html").animate({scrollTop:0},interval);
+        });
+        $("#gotop").mouseover(function (e) {
+            $(this).css("opacity",0.2);
+        });
+        $("#gotop").mouseout(function (e) {
+            $(this).css("opacity",1);
+        });
+        $.goTop();//实现回到顶部元素的渐显与渐隐
+    });
+</script>
+</body>
+</html>

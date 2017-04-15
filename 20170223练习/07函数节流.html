@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数节流</title>
+</head>
+<body>
+<input type="button" value="玉石俱焚">
+<script>
+    var input = document.getElementsByTagName("input")[0];
+    var lock = true;//锁
+    input.onclick=function () {
+        if (!lock) {
+            return;
+        }
+        lock = false;
+        console.log("已重伤");
+
+        setTimeout(function () {
+            lock = true;
+        },3000);
+    }
+</script>
+</body>
+</html>

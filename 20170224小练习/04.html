@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 8000px;  }
+        div{
+            width: 200px;
+            height: 222px;
+            background-color: yellow;}
+        p{
+            width: 100px;
+            height: 100px;
+            background-color: orange;}
+    </style>
+</head>
+<body>
+<!--div#box>ul>li>ul>li>p-->
+<div id="box">
+    <ul>
+        <li>
+            <ul>
+                <li>
+                    <p></p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script>
+    document.body.onclick=function () {
+        console.log("body");
+    };
+    document.getElementById("box").onclick=function () {
+        console.log("box");
+    };
+</script>
+</body>
+</html>

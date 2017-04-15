@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>accordion</title>
+    <link rel="stylesheet" href="jquery-ui.min.css">
+</head>
+<body>
+<!--div.accordion>(h3+div>p)*4-->
+<div class="accordion">
+    <h3>选项一</h3>
+    <div>
+        <p>猫猫</p>
+    </div>
+    <h3>选项二</h3>
+    <div>
+        <p>小白</p>
+    </div>
+    <h3>选项三</h3>
+    <div>
+        <p>赵爵</p>
+    </div>
+    <h3>选项四</h3>
+    <div>
+        <p>白驰</p>
+    </div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".accordion").accordion();
+    });
+</script>
+</body>
+</html>

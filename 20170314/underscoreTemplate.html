@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="js/underscore.js"></script>
+<script>
+    var templateString = "好<%=xinqing%>，我买了一个<%=dongxi%>，花了<%=qian%>元";
+    var compile = _.template(templateString);
+    var dict = {
+        "xinqing":"开心（〜^㉨^)〜",
+        "dongxi":"笔记本",
+        "qian":8000
+    };
+    console.log(compile(dict));
+</script>
+</body>
+</html>

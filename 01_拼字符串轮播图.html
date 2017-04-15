@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拼字符串轮播图</title>
+    
+</head>
+<body>
+    <input type="button" value="上一张" id="leftBtn"/>
+    <img src="images/lunbo/1.jpeg" alt="" id="pic"/>
+    <input type="button" value="下一张" id="rightBtn"/>
+    <script type="text/javascript">
+    //用字符串拼接法
+    //得到所有的元素
+        var leftBtn = document.getElementById("leftBtn");
+        var rightBtn = document.getElementById("rightBtn");
+        var oImaPic = document.getElementById("pic");
+        var index = 1;//信号量。图片编号，合理值1-5
+
+        //事件监听
+        leftBtn.onclick = function () {
+            index--;
+            if(index<1){index=5;}
+            change();
+        };
+        rightBtn.onclick = function () {
+            index++;
+            if(index>5){index=1;}
+            change();
+        };
+        function change(){
+            oImaPic.src="images/lunbo/" + index + ".jpeg";
+        }
+    </script>
+</body>
+</html>

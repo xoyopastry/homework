@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xjqxz</title>
+    <style>
+        body{text-align: center;}
+        div{margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+            font-family: FZShuTi;
+            color: #6ce26c;
+        }
+        table,tr,td{
+            border: 1px solid aqua;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <h1>仙剑</h1>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>主题</td>
+            <td>图片</td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    var table = document.getElementsByTagName("table")[0];
+    function xj(obj) {
+        for (var i = 0; i < obj.photos.photo.length; i++) {
+            var o = obj.photos.photo[i];
+            console.log(o);
+            var ext = o.url.substr(-3);
+            var img = "";
+            if (ext == "FLV"){
+                img = '<img src="http://files.haohaowan.com/yxxj/sp_'+o.url+'.jpg">'
+            }else{
+                img = '<img src="http://files.haohaowan.com/yxxj/li_'+o.url+'">'
+            }
+            table.innerHTML +=
+                "<tr>" +
+                "<td>" +o.id+ "</td>"+
+                "<td>" +o.subject+ "</td>"+
+                "<td>" +img+ "</td>"+
+                "</tr>";
+        }
+    }
+</script>
+<script type="text/javascript" src="http://yx.xianjian.com/p/api.php?method=wf&api_key=nimakdkeiLdkfen2lidkdlDLLEKd&page=1&per_page=10&tag=&type=5&order=2&_ksTS=1462767366304_78&jsoncallback=xj"></script>
+</body>
+</html>

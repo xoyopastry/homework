@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条pogressbar</title>
+</head>
+<body>
+<div id="pb"></div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script>
+    var pb;
+    var max = 100;
+    var current = 0;
+    $(document).ready(function () {
+        pb = $("#pb");
+        pb.progressbar({max:100});
+        setInterval(function () {
+            current += 10;
+            if (current > 100) {
+                current = 0;
+            }
+            pb.progressbar({value:current});
+        },100);
+    });
+</script>
+</body>
+</html>

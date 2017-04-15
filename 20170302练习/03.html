@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj ={
+        a:0,
+        b:1
+    }
+    Object.defineProperty(obj,"c",{set:function (i) {
+        this.a= i / 2;
+    }});//我们可以随时使用 Object.defineProperty()
+    // 给一个已经存在的对象添加一个 setter。
+    obj.c=3;
+    console.log(obj.a);
+    /*
+    *概述
+     set 语法可以将一个函数绑定在当前对象的指定属性上，
+     当那个属性被赋值时，你所绑定的函数就会被调用。
+    *
+    * 语法
+     {set prop(val) { . . . }}
+     {set [expression](val) { . . . }}
+     参数
+
+     prop
+     将被指定函数绑定的属性名。
+     val
+     存有将要赋给 prop 的值的变量的代称。
+     expression
+     从 ECMAScript 6 开始，
+     将被指定函数绑定的属性名可以是一个表达式。
+
+     https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/set
+
+    */
+
+</script>
+</body>
+</html>

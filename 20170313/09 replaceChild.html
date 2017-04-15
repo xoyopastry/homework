@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>replaceChild</title>
+</head>
+<body>
+<div>
+    <p>缅甸布娃娃</p>
+    <p id="cat">加菲</p>
+    <p>英短</p>
+</div>
+<script>
+    var oDiv=document.getElementsByTagName("div")[0];
+    var oCat=document.getElementById("cat");
+    var op=document.createElement("p");
+    op.innerHTML="墩布";
+    oDiv.replaceChild(op,oCat);
+</script>
+</body>
+</html>

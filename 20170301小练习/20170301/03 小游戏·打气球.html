@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        html{height: 100%;}
+        body{
+            height: 100%;
+            background: url("images/bg.jpg");
+            background-size:cover;
+            overflow: hidden;}
+        h1{
+            color: white;
+            font-size:50px;  }
+        .ballon{
+            width: 81px; height: 119px;
+            background:url("images/ballon.png") no-repeat;
+            position: absolute;cursor: crosshair;
+        }
+    </style>
+</head>
+<body>
+<h1 id="score">游戏得分：0</h1>
+<h1 id="time">游戏剩余时间：50s</h1>
+<h1 id="s">游戏进行中</h1>
+<audio src="images/c.wav" id="music"></audio>
+<audio src="images/bgm.mp3" autoplay></audio>
+<script>
+    var oScore = document.getElementById("score");
+    var oTime = document.getElementById("time");
+    var oS = document.getElementById("s");
+    var oMusic = document.getElementById("music");
+    var score = 0;
+    var time = 50;
+    function Ballon() {
+        this.dom = null;
+        this.left = Math.random() * 1200;
+        this.top = 600;
+        this.score = parseInt(Math.random()*7) +1;
+        this.init();
+        this.fly();
+    }
+    Ballon.prototype.init=function () {
+        this.dom = document.createElement("div");//创建一个div元素
+        this.dom.className = "ballon";
+        this.dom.style.left = this.left + "px";// 设置div元素的left值和top值
+        this.dom.style.top = this.top + "px";
+        var x = -(this.score - 1) % 4 * 96;
+        var y = -parseInt((this.score-1)/4)*120;
+        this.dom.style.backgroundPosition = x + "px " + y + "px";
+        document.body.appendChild(this.dom);//把div元素追加到body里面
+        var self = this;
+        this.dom.onclick = function() {// 给div元素添加点击事件=function(){
+            self.bomb();
+            score += self.score;
+            oScore.innerHTML = "游戏得分：" + score;
+            oMusic.load();
+            oMusic.play();
+        }
+    };
+    Ballon.prototype.fly=function () {
+        var self =this;
+        this.timer=setInterval(function () {
+            self.top -= 2 * self.score;
+            if (self.top< -100) self.bomb();
+            self.dom.style.top = self.top+"px";
+        },40);
+    };
+    Ballon.prototype.bomb=function () {
+        clearInterval(this.timer);//清除点中的计时器
+        document.body.removeChild(this.dom);//移除div气球
+    };
+    var frameCount=0;
+    var timer = setInterval(function () {
+        frameCount++;
+        if (frameCount % 2 == 0) {
+            time -= 1;
+            oTime.innerHTML = "游戏剩余时间："+time+"s";
+        }
+        if (time == 0) {
+            clearInterval(this.timer);
+            oS.innerHTML ="游戏结束";
+        }
+        new Ballon();
+    },500);
+    /*******伪代码*********
+    * 气球对象
+    * 属性：dom,left,top,score
+    * 方法：init,bomb,fly
+    * dom绑定点击事件
+    * init(){
+    *   创建一个div元素
+    *   把ballon给创建的div元素
+    *   把div元素追加到body里面
+    *   设置div元素的left值和top值
+    *   给div元素添加点击事件=function(){
+    *       气球爆炸
+    *       加分，改变分数所在的h1标签的内容
+    *       音效
+    *       特效，自己加
+    *   }
+    * }
+    *  fly(){
+    *      timer=setInterval(function(){
+    *          修改top的信号量
+    *          if(top < -100){
+    *              self.bomb();
+    *          }
+    *          self.dom.style.top=self.top + "px";
+    *      },);
+    *  }
+    *  bomb(){
+    *      移除div气球
+    *      清除点中的计时器
+    *  }
+    *  var timer = setInterval(function(){
+    *      new Ballon();
+    *  },);
+    * */
+</script>
+</body>
+</html>

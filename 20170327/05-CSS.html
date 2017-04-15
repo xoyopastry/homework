@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    p{
+      width: 60px;
+      height: 60px;
+      background-color: #ccc;
+    color: red;}
+  </style>
+</head>
+<body>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<script src="jquery-3.2.0.min.js"></script>
+<script>
+  alert($("p:first").css("background-color"));
+  alert($("p:first").css("backgroundColor"));
+  alert($("p:first").css("color"));
+  $("p:odd").css("backgroundColor","blue");
+  $("p:lt(4)").css({
+      "width":20,
+      "height":20,
+      "backgroundColor":"red"
+  });
+  $("p:eq(3)").css("width","+=20");
+</script>
+</body>
+</html>

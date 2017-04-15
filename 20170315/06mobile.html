@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{color: aqua;}
+        span{font-size: medium;color: deeppink;}
+        #bt{font-family: FZShuTi;
+            color: #009900;}
+
+    </style>
+</head>
+<body>
+<div>
+    <h1>๑乛◡乛๑
+        <span id="bt">这里有最全的手机号码库</span>
+        ๑乛◡乛๑</h1>
+    <input type="text" id="mobile">
+    <input type="button" value="查询手机归属地" id="btn">
+    <p><span id="areaName"></span></p>
+    <p><span id="providerName"></span></p>
+</div>
+<script src="j.js"></script>
+<script>
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        var mobile = document.getElementById("mobile").value;
+        if (!/^1[3578]\d{9}$/.test(mobile)){
+            alert("请输入正确的手机号(╥╯^╰╥)");
+            return;
+        }
+        j.get("mobile.php",
+            {"mobile":mobile},
+            function (err,data) {
+            if(err) return;
+            var obj = JSON.parse(data);
+            console.log(mobile);
+            console.log(obj);
+            document.getElementById("areaName").innerHTML=obj.areaName;
+            document.getElementById("providerName").innerHTML=obj.providerName;
+        });
+    };
+</script>
+</body>
+</html>
